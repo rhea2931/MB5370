@@ -1,0 +1,54 @@
+---
+title: "Module.4.e.portfolio"
+author: "Rhea Arya"
+date: "2023-05-14"
+output: html_document
+---
+
+#Data Science Assignment 
+#Imported QFISH data 
+
+```{r}
+qfish_data <- read_csv("C:\\Users\\Rhea Arya\\Desktop\\QFISH.csv", #importing the QFISH dataset into rmd
+                       col_types = cols(
+                   `Calendar Year` = col_character(),
+                   Licences = col_double(),
+                   Days = col_double(),
+                   Tonnes = col_number()
+                 ))
+qfish_data
+
+as.tibble(qfish_data) #Changing it into a tibble 
+
+```
+
+```{r}
+ggplot(data = qfish_data) + 
+  geom_point(mapping = aes(x = Year, y = Tonnes)) + 
+   geom_smooth(mapping = aes(x = Year, y = Tonnes, linetype = drv))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
